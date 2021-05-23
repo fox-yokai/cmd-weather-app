@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/fox-yokai/cmd-weather-app/issues"
   },
-  "homepage": "https://github.com/fox-yokai/cmd-weather-app#readme"
+  "homepage": "https://github.com/fox-yokai/cmd-weather-app#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "chalk": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "inquirer": "^8.0.0"
+  }
 }
