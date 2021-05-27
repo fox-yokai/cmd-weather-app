@@ -11,7 +11,7 @@ async function getWeather() {
     try {
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=44.79&lon=-95.53&exclude=minutely,daily,alerts&appid=${weatherKey}&units=imperial`);
         let currentTemp = response.data.current.temp
-        let chanceOfRain = response.data.hourly[0].pop
+        let chanceOfRain = response.data.hourly[0].pop * 100
         console.log(chalk.bgGreen.black("Current temp is ", currentTemp))
         console.log(chalk.bgGreen.black("Chance of rain ", chanceOfRain,"%"))
     } catch (error) {
@@ -27,7 +27,7 @@ async function getLocationWeather(zipPrompt) {
       if (lon) {
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,daily,alerts&appid=${weatherKey}&units=imperial`);
         let currentTemp = response.data.current.temp
-        let chanceOfRain = response.data.hourly[0].pop
+        let chanceOfRain = response.data.hourly[0].pop * 100
         console.log(chalk.bgGreen.black("Current temp is ", currentTemp))
         console.log(chalk.bgGreen.black("Chance of rain ", chanceOfRain,"%"))
       }
